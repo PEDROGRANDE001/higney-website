@@ -118,6 +118,38 @@
     .intro{padding:64px 24px 48px}
   }
 
+  /* Product detail view — full-screen white, Eric Brand style; the header bar stays above it */
+  .lightbox{position:fixed;inset:0;z-index:97;background:#fff;
+    opacity:0;visibility:hidden;transition:opacity .4s ease,visibility 0s linear .4s}
+  body.lbOpen .lightbox{opacity:1;visibility:visible;transition:opacity .4s ease}
+  body.lbOpen{overflow:hidden}
+  .lb-stage{position:absolute;inset:0;display:flex;padding-top:var(--bar-h)}
+  .lb-info{flex:0 0 44%;min-width:0;display:flex;flex-direction:column;justify-content:center;
+    padding:32px clamp(24px,3vw,56px) 110px clamp(24px, 1.05rem + 2.25vw, 60px)}
+  .lb-eyebrow{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+  .lb-title{font-family:var(--serif);font-weight:500;font-size:clamp(30px,3.6vw,54px);line-height:1.12;
+    text-transform:uppercase;letter-spacing:.01em;margin:16px 0 24px}
+  .lb-designer{font-size:12px;font-weight:400;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+  .lb-frame{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;
+    padding:20px clamp(20px,3vw,56px) 44px}
+  .lb-frame img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+  .lb-close{position:absolute;top:calc(var(--bar-h) + 10px);right:clamp(20px,2.8vw,42px);
+    width:46px;height:46px;display:flex;align-items:center;justify-content:center;
+    background:none;border:0;cursor:pointer;color:var(--ink);transition:color .2s}
+  .lb-nav{position:absolute;left:clamp(24px, 1.05rem + 2.25vw, 60px);bottom:24px;display:flex;gap:10px}
+  .lb-arrow{width:46px;height:46px;display:flex;align-items:center;justify-content:center;
+    background:none;border:0;cursor:pointer;color:var(--accent);transition:color .2s}
+  .lb-close:hover,.lb-arrow:hover{color:var(--green-header)}
+  .lb-close:focus-visible,.lb-arrow:focus-visible{outline:1px solid var(--accent);outline-offset:4px}
+  .lb-close svg{width:24px;height:24px}
+  .lb-arrow svg{width:30px;height:30px}
+  @media(max-width:700px){
+    .lb-stage{flex-direction:column}
+    .lb-frame{order:1;flex:1;min-height:0;padding:12px 20px 0}
+    .lb-info{order:2;flex:0 0 auto;justify-content:flex-start;padding:20px 24px 96px}
+    .lb-title{margin:10px 0 14px}
+  }
+
   /* Contact */
   .contact{background:linear-gradient(150deg,var(--green) 0%,var(--green-deep) 100%);color:#fff;text-align:center;padding:84px 28px}
   .contact h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,5vw,52px);margin-bottom:24px}
@@ -227,90 +259,106 @@
   </ul>
 
   <div class="grid">
-    <a class="product" href="#" data-cat="chairs">
+    <a class="product" href="#" data-project="Project &amp; Location TBD" data-designer="TBD" data-cat="chairs">
       <figure>
         <img src="assets/product-realized/cane-dining-chair.jpg" alt="Cane-back dining chair in light teak"/>
         <figcaption><span class="name">Cane Dining Chair</span><span class="meta">Client &amp; location TBD</span></figcaption>
       </figure>
     </a>
-    <a class="product" href="#" data-cat="occasional">
+    <a class="product" href="#" data-project="Project &amp; Location TBD" data-designer="TBD" data-cat="occasional">
       <figure>
         <img src="assets/product-realized/sculpted-wood-side-table.jpg" alt="Sculpted solid-wood side table with turned legs"/>
         <figcaption><span class="name">Sculpted Side Table</span><span class="meta">Client &amp; location TBD</span></figcaption>
       </figure>
     </a>
-    <a class="product" href="#" data-cat="lounge">
+    <a class="product" href="#" data-project="Project &amp; Location TBD" data-designer="TBD" data-cat="lounge">
       <figure>
         <img src="assets/product-realized/woven-lounge-chair-grey.jpg" alt="Grey woven-rope lounge chair on a teak frame"/>
         <figcaption><span class="name">Woven Lounge Chair</span><span class="meta">Client &amp; location TBD</span></figcaption>
       </figure>
     </a>
-    <a class="product" href="#" data-cat="coffee-tables">
+    <a class="product" href="#" data-project="Project &amp; Location TBD" data-designer="TBD" data-cat="coffee-tables">
       <figure>
         <img src="assets/product-realized/travertine-coffee-table.jpg" alt="Round travertine coffee table with sculpted column base"/>
         <figcaption><span class="name">Travertine Coffee Table</span><span class="meta">Client &amp; location TBD</span></figcaption>
       </figure>
     </a>
-    <a class="product" href="#" data-cat="chairs">
+    <a class="product" href="#" data-project="Project &amp; Location TBD" data-designer="TBD" data-cat="chairs">
       <figure>
         <img src="assets/product-realized/teak-barrel-chair.jpg" alt="Teak barrel chair with slatted back and ivory cushion"/>
         <figcaption><span class="name">Teak Barrel Chair</span><span class="meta">Client &amp; location TBD</span></figcaption>
       </figure>
     </a>
-    <a class="product" href="#" data-cat="stools">
+    <a class="product" href="#" data-project="Project &amp; Location TBD" data-designer="TBD" data-cat="stools">
       <figure>
         <img src="assets/product-realized/pedestal-stool.jpg" alt="Solid-wood pedestal stool with figured grain"/>
         <figcaption><span class="name">Pedestal Stool</span><span class="meta">Client &amp; location TBD</span></figcaption>
       </figure>
     </a>
-    <a class="product" href="#" data-cat="outdoor">
+    <a class="product" href="#" data-project="Project &amp; Location TBD" data-designer="TBD" data-cat="outdoor">
       <figure>
         <img src="assets/product-realized/sun-lounger-white.jpg" alt="Teak sun lounger with white cushion"/>
         <figcaption><span class="name">Teak Sun Lounger</span><span class="meta">Client &amp; location TBD</span></figcaption>
       </figure>
     </a>
-    <a class="product" href="#" data-cat="chairs">
+    <a class="product" href="#" data-project="Project &amp; Location TBD" data-designer="TBD" data-cat="chairs">
       <figure>
         <img src="assets/product-realized/leather-seat-dining-chair.jpg" alt="Curved-back dining chair with black leather seat"/>
         <figcaption><span class="name">Leather-Seat Dining Chair</span><span class="meta">Client &amp; location TBD</span></figcaption>
       </figure>
     </a>
-    <a class="product" href="#" data-cat="occasional">
+    <a class="product" href="#" data-project="Project &amp; Location TBD" data-designer="TBD" data-cat="occasional">
       <figure>
         <img src="assets/product-realized/teak-pedestal-table.jpg" alt="Round teak side table on a conical pedestal base"/>
         <figcaption><span class="name">Teak Pedestal Table</span><span class="meta">Client &amp; location TBD</span></figcaption>
       </figure>
     </a>
-    <a class="product" href="#" data-cat="lounge">
+    <a class="product" href="#" data-project="Project &amp; Location TBD" data-designer="TBD" data-cat="lounge">
       <figure>
         <img src="assets/product-realized/wicker-club-chair.jpg" alt="Woven wicker club chair with upholstered cushions"/>
         <figcaption><span class="name">Wicker Club Chair</span><span class="meta">Client &amp; location TBD</span></figcaption>
       </figure>
     </a>
-    <a class="product" href="#" data-cat="stools">
+    <a class="product" href="#" data-project="Project &amp; Location TBD" data-designer="TBD" data-cat="stools">
       <figure>
         <img src="assets/product-realized/live-edge-stool.jpg" alt="Live-edge wood stool with splayed legs"/>
         <figcaption><span class="name">Live-Edge Stool</span><span class="meta">Client &amp; location TBD</span></figcaption>
       </figure>
     </a>
-    <a class="product" href="#" data-cat="chairs">
+    <a class="product" href="#" data-project="Project &amp; Location TBD" data-designer="TBD" data-cat="chairs">
       <figure>
         <img src="assets/product-realized/teak-high-chair.jpg" alt="Teak child's high chair with slatted back"/>
         <figcaption><span class="name">Teak High Chair</span><span class="meta">Client &amp; location TBD</span></figcaption>
       </figure>
     </a>
-    <a class="product" href="#" data-cat="outdoor">
+    <a class="product" href="#" data-project="Project &amp; Location TBD" data-designer="TBD" data-cat="outdoor">
       <figure>
         <img src="assets/product-realized/sun-lounger-grey.jpg" alt="Sun lounger with grey upholstered cushions on a teak base"/>
         <figcaption><span class="name">Upholstered Sun Lounger</span><span class="meta">Client &amp; location TBD</span></figcaption>
       </figure>
     </a>
-    <a class="product" href="#" data-cat="lounge">
+    <a class="product" href="#" data-project="Project &amp; Location TBD" data-designer="TBD" data-cat="lounge">
       <figure>
         <img src="assets/product-realized/woven-lounge-chair-ivory.jpg" alt="Ivory woven lounge chair on a light ash frame"/>
         <figcaption><span class="name">Woven Lounge Chair, Ivory</span><span class="meta">Client &amp; location TBD</span></figcaption>
       </figure>
     </a>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Product detail" aria-hidden="true">
+  <div class="lb-stage">
+    <div class="lb-info">
+      <div class="lb-eyebrow" id="lbEyebrow"></div>
+      <h2 class="lb-title" id="lbTitle"></h2>
+      <div class="lb-designer" id="lbDesigner"></div>
+    </div>
+    <div class="lb-frame"><img id="lbImg" src="" alt=""/></div>
+  </div>
+  <button class="lb-close" aria-label="Close and return to the grid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+  <div class="lb-nav">
+    <button class="lb-arrow lb-prev" aria-label="Previous product"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 4l-8 8 8 8"/></svg></button>
+    <button class="lb-arrow lb-next" aria-label="Next product"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 4l8 8-8 8"/></svg></button>
   </div>
 </div>
 
@@ -345,6 +393,44 @@
       t.style.display=(f==='all'||t.dataset.cat===f)?'':'none';
     });
   }));
+
+  const lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg'),
+    lbEyebrow=document.getElementById('lbEyebrow'),lbTitle=document.getElementById('lbTitle'),
+    lbDesigner=document.getElementById('lbDesigner');
+  let lbList=[],lbIdx=0,lbReturn=null;
+  function lbShow(){
+    const t=lbList[lbIdx],img=t.querySelector('img');
+    lbImg.src=img.src;lbImg.alt=img.alt;
+    const catBtn=document.querySelector('.filters button[data-filter="'+t.dataset.cat+'"]');
+    lbEyebrow.textContent='Product Realized / '+(catBtn?catBtn.textContent:t.dataset.cat);
+    lbTitle.textContent=t.dataset.project||'Project & Location TBD';
+    lbDesigner.textContent='Designer: '+(t.dataset.designer||'TBD');
+  }
+  function lbOpen(tile){
+    lbList=[...document.querySelectorAll('.product')].filter(t=>t.style.display!=='none');
+    lbIdx=lbList.indexOf(tile);lbReturn=tile;
+    lbShow();
+    document.body.classList.add('lbOpen');
+    bar.classList.remove('hide');
+    lb.setAttribute('aria-hidden','false');
+    lb.querySelector('.lb-close').focus();
+  }
+  function lbClose(){
+    document.body.classList.remove('lbOpen');
+    lb.setAttribute('aria-hidden','true');
+    if(lbReturn)lbReturn.focus();
+  }
+  function lbStep(d){lbIdx=(lbIdx+d+lbList.length)%lbList.length;lbShow()}
+  document.querySelectorAll('.product').forEach(t=>t.addEventListener('click',e=>{e.preventDefault();lbOpen(t)}));
+  lb.querySelector('.lb-close').addEventListener('click',lbClose);
+  lb.querySelector('.lb-prev').addEventListener('click',()=>lbStep(-1));
+  lb.querySelector('.lb-next').addEventListener('click',()=>lbStep(1));
+  addEventListener('keydown',e=>{
+    if(!document.body.classList.contains('lbOpen'))return;
+    if(e.key==='Escape')lbClose();
+    else if(e.key==='ArrowLeft')lbStep(-1);
+    else if(e.key==='ArrowRight')lbStep(1);
+  });
 </script>
 </body>
 </html>
