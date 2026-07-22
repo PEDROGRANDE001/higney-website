@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Product Realized — Higney International</title>
+<meta name="description" content="Product Realized — furniture designed by others and manufactured by Higney International, from custom hospitality pieces to bespoke residential commissions."/>
+<link rel="icon" href="assets/a1e69024bd_Logo_White_.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --green:#8aa890;
+    --green-deep:#7a9a82;
+    --accent:#5a7561;
+    --green-header:#4e6854;
+    --green-soft:#eef3ee;
+    --ink:#2a312c;
+    --muted:#647063;
+    --line:#e7ece7;
+    --serif:"Cormorant Garamond",Georgia,serif;
+    --sans:"Inter",system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+
+  /* Header — Eric Brand treatment: fixed white bar + fullscreen white menu layer */
+  :root{--bar-h:92px;--nav-ink:#303030;--nav-line:#e3e3e3}
+  body{padding-top:var(--bar-h)}
+  header{position:fixed;top:0;left:0;right:0;z-index:99;background:#fff;transition:transform .5s ease-out}
+  header.hide{transform:translate3d(0,-100%,0)}
+  body.menuOpen header.hide{transform:none}
+  .bar{height:var(--bar-h);display:flex;align-items:center;justify-content:space-between;gap:28px;
+    padding:0 clamp(24px, 1.05rem + 2.25vw, 60px)}
+  .bar .logo img{height:44px;width:auto;filter:brightness(0)}
+  .menu-btn{width:46px;height:46px;background:none;border:0;cursor:pointer;padding:10px;z-index:100}
+  .menu-btn i{display:block;width:26px;height:2px;background:#000;margin:5px 0;transition:transform .2s,opacity .2s}
+  body.menuOpen .menu-btn i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  body.menuOpen .menu-btn i:nth-child(2){opacity:0}
+  body.menuOpen .menu-btn i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .menu-layer{position:fixed;inset:0;z-index:98;background:#fff;overflow:auto;
+    display:flex;flex-direction:column;justify-content:space-between;gap:24px;
+    padding:clamp(112px, 5.5rem + 3.75vw, 160px) clamp(24px, 1.05rem + 2.25vw, 60px) clamp(28px,3vw,60px);
+    opacity:0;visibility:hidden;transition:opacity .75s cubic-bezier(.5,0,0,1),visibility 0s linear .75s}
+  body.menuOpen .menu-layer{opacity:1;visibility:visible;transition:opacity .75s cubic-bezier(.5,0,0,1)}
+  body.menuOpen{overflow:hidden}
+  .menu-cols{display:grid;grid-template-columns:repeat(6,1fr);gap:28px;align-items:flex-start}
+  .menu-cols h2{font-family:var(--sans);font-size:clamp(16px, 1rem + .156vw, 18px);font-weight:400;
+    text-transform:uppercase;letter-spacing:.02em;color:var(--nav-ink);margin-bottom:clamp(16px,1.4vw,26px)}
+  .menu-cols ul{list-style:none}
+  .menu-layer a{display:inline-block;position:relative;font-size:1rem;font-weight:300;color:var(--nav-ink);
+    text-transform:lowercase;padding:.2rem 0}
+  .menu-layer a::after{content:"";position:absolute;left:0;bottom:.2rem;height:1px;width:0;
+    background:var(--accent);transition:width .3s ease-in-out}
+  .menu-layer a:hover::after,.menu-layer a:focus::after{width:100%}
+  .menu-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:36px}
+  .menu-secondary{display:flex;gap:clamp(28px,4vw,64px)}
+  .menu-secondary a{font-size:clamp(16px, 1rem + .156vw, 18px);line-height:1.3}
+  .menu-legal{display:flex;flex-direction:column;align-items:center;gap:10px}
+  .menu-legal ul{list-style:none;display:flex;flex-direction:column;align-items:center}
+  .menu-legal a{font-size:.75rem}
+  .menu-social{display:flex;gap:14px}
+  .menu-social a{padding:0}
+  .menu-social a::after{display:none}
+  .menu-social svg{display:block;width:24px;height:24px;color:var(--nav-ink)}
+  @media(max-width:900px){
+    :root{--bar-h:72px}
+    .bar .logo img{height:36px}
+    .menu-cols{grid-template-columns:1fr 1fr}
+    .menu-cols>div{border-top:1px solid var(--nav-line);padding-top:20px}
+    .menu-bottom{flex-direction:column;align-items:center;text-align:center}
+    .menu-secondary{flex-direction:column;gap:14px}
+  }
+
+  /* Hero — full-bleed banner, Eric Brand style */
+  .hero{height:clamp(320px,56vh,560px);
+    background:linear-gradient(180deg,rgba(21,28,23,.18) 0%,rgba(21,28,23,0) 40%),
+      url("assets/a53471e1b2_Kimpton.Tulum.001.jpg") center 58%/cover no-repeat}
+
+  /* Title + narrative */
+  .intro{max-width:840px;margin:0 auto;text-align:center;padding:96px 28px 64px}
+  .intro .eyebrow{font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:18px}
+  .intro h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,6vw,72px);line-height:1.04;letter-spacing:.01em}
+  .intro .sub{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.4vw,27px);color:var(--muted);margin-top:16px}
+  .intro p.lede{margin:28px auto 0;max-width:620px;font-weight:300;font-size:16px;color:var(--muted)}
+
+  /* Layout */
+  .wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+
+  /* Category filter bar */
+  .filters{list-style:none;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+    row-gap:10px;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .filters li{display:flex;align-items:center}
+  .filters li + li::before{content:"\00B7";margin:0 clamp(10px,1.6vw,20px);color:#c4ccc4}
+  .filters button{background:none;border:0;cursor:pointer;font-family:var(--sans);font-weight:400;
+    font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+    padding:2px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+  .filters button:hover{color:var(--ink)}
+  .filters button.active{color:var(--ink);border-bottom-color:var(--accent)}
+
+  /* Product grid */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px 36px;padding:64px 0 96px}
+  .product figure{overflow:hidden}
+  .product img{width:100%;aspect-ratio:1/1;transition:transform .6s ease}
+  .product:hover img{transform:scale(1.03)}
+  .product figcaption{margin-top:14px;text-align:center}
+  .product .name{display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+    font-weight:500;color:var(--ink);transition:color .2s}
+  .product:hover .name{color:var(--accent)}
+  .product .meta{display:block;font-size:13px;font-weight:300;color:var(--muted);margin-top:4px}
+  @media(max-width:900px){.grid{grid-template-columns:1fr 1fr;gap:36px 24px}}
+  @media(max-width:560px){
+    .grid{grid-template-columns:1fr;gap:40px;padding:48px 0 72px}
+    .intro{padding:64px 24px 48px}
+  }
+
+  /* Contact */
+  .contact{background:linear-gradient(150deg,var(--green) 0%,var(--green-deep) 100%);color:#fff;text-align:center;padding:84px 28px}
+  .contact h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,5vw,52px);margin-bottom:24px}
+  .contact a.line,.contact p{display:block;color:#e3efe8;font-weight:300;font-size:18px;margin:6px 0}
+  .contact a.line:hover{color:#fff}
+  .contact .divider{width:46px;height:2px;background:#5f9377;margin:28px auto}
+
+  footer{background:var(--green-deep);color:#9fc4b1;text-align:center;font-size:13px;padding:26px;letter-spacing:.03em}
+</style>
+</head>
+<body>
+
+<header id="topbar">
+  <div class="bar">
+    <a class="logo" href="index.html"><img src="assets/a1e69024bd_Logo_White_.png" alt="Higney International"/></a>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false" onclick="toggleMenu()"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="menu-layer" id="menu">
+  <nav class="menu-cols" aria-label="Navigation">
+    <div>
+      <h2>Company</h2>
+      <ul>
+        <li><a href="#">Vision</a></li>
+        <li><a href="#">Founder</a></li>
+        <li><a href="#">Asia operations</a></li>
+        <li><a href="#">Team</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Projects</h2>
+      <ul>
+        <li><a href="projects.html">Hospitality</a></li>
+        <li><a href="#">Millwork</a></li>
+        <li><a href="#">Residential</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Products</h2>
+      <ul>
+        <li><a href="#">Product design</a></li>
+        <li><a href="product-realized.html">Product Realized</a></li>
+        <li><a href="#">Gallery</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Finishes</h2>
+      <ul>
+        <li><a href="#">Wood</a></li>
+        <li><a href="#">Specialty</a></li>
+        <li><a href="#">Glass/Mirror</a></li>
+        <li><a href="#">Upholstery Details</a></li>
+        <li><a href="#">Metal</a></li>
+        <li><a href="#">Decorative Hardware</a></li>
+        <li><a href="#">All Finishes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Contact</h2>
+      <ul>
+        <li><a href="#">Our offices</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="menu-bottom">
+    <nav class="menu-secondary" aria-label="Secondary">
+      <a href="#">Resource<br/>center</a>
+      <a href="#">Masters &amp;<br/>mentors</a>
+      <a href="#">Blog</a>
+      <a href="#">General<br/>information</a>
+    </nav>
+    <div class="menu-legal">
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Legal notice</a></li>
+      </ul>
+      <div class="menu-social">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.6 21v-7.2h2.4l.4-2.8h-2.8V9.2c0-.8.3-1.4 1.5-1.4h1.4V5.3c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2H8.2v2.8h2.4V21h3z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="9.6" width="2.9" height="10.4"/><circle cx="5.4" cy="6.2" r="1.7"/><path d="M10.4 9.6h2.8v1.4h.1c.4-.8 1.5-1.7 3.1-1.7 3 0 3.6 2 3.6 4.6V20h-2.9v-5.3c0-1.3-.1-2.9-1.8-2.9-1.8 0-2 1.4-2 2.8V20h-2.9V9.6z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="hero" role="img" aria-label="Guest room at Tankah Bay Hotel furnished with wood pieces realized by Higney International"></section>
+
+<section class="intro">
+  <div class="eyebrow">Products</div>
+  <h1>Product Realized</h1>
+  <p class="sub">Designed by others &mdash; manufactured by Higney International.</p>
+  <!-- Placeholder narrative below — Peter to refine. Captions in the grid are also placeholders ("Client & location TBD"). -->
+  <p class="lede">A selection of furniture realized through our manufacturing partners &mdash; pieces conceived by designers and brought to life in wood, cane, stone and weave.</p>
+</section>
+
+<div class="wrap">
+  <ul class="filters" aria-label="Filter products by category">
+    <li><button class="active" data-filter="all">All Products</button></li>
+    <li><button data-filter="chairs">Chairs</button></li>
+    <li><button data-filter="coffee-tables">Coffee Tables</button></li>
+    <li><button data-filter="lounge">Lounge Seating</button></li>
+    <li><button data-filter="occasional">Occasional Tables</button></li>
+    <li><button data-filter="outdoor">Outdoor</button></li>
+    <li><button data-filter="stools">Stools</button></li>
+  </ul>
+
+  <div class="grid">
+    <a class="product" href="#" data-cat="chairs">
+      <figure>
+        <img src="assets/product-realized/cane-dining-chair.jpg" alt="Cane-back dining chair in light teak"/>
+        <figcaption><span class="name">Cane Dining Chair</span><span class="meta">Client &amp; location TBD</span></figcaption>
+      </figure>
+    </a>
+    <a class="product" href="#" data-cat="occasional">
+      <figure>
+        <img src="assets/product-realized/sculpted-wood-side-table.jpg" alt="Sculpted solid-wood side table with turned legs"/>
+        <figcaption><span class="name">Sculpted Side Table</span><span class="meta">Client &amp; location TBD</span></figcaption>
+      </figure>
+    </a>
+    <a class="product" href="#" data-cat="lounge">
+      <figure>
+        <img src="assets/product-realized/woven-lounge-chair-grey.jpg" alt="Grey woven-rope lounge chair on a teak frame"/>
+        <figcaption><span class="name">Woven Lounge Chair</span><span class="meta">Client &amp; location TBD</span></figcaption>
+      </figure>
+    </a>
+    <a class="product" href="#" data-cat="coffee-tables">
+      <figure>
+        <img src="assets/product-realized/travertine-coffee-table.jpg" alt="Round travertine coffee table with sculpted column base"/>
+        <figcaption><span class="name">Travertine Coffee Table</span><span class="meta">Client &amp; location TBD</span></figcaption>
+      </figure>
+    </a>
+    <a class="product" href="#" data-cat="chairs">
+      <figure>
+        <img src="assets/product-realized/teak-barrel-chair.jpg" alt="Teak barrel chair with slatted back and ivory cushion"/>
+        <figcaption><span class="name">Teak Barrel Chair</span><span class="meta">Client &amp; location TBD</span></figcaption>
+      </figure>
+    </a>
+    <a class="product" href="#" data-cat="stools">
+      <figure>
+        <img src="assets/product-realized/pedestal-stool.jpg" alt="Solid-wood pedestal stool with figured grain"/>
+        <figcaption><span class="name">Pedestal Stool</span><span class="meta">Client &amp; location TBD</span></figcaption>
+      </figure>
+    </a>
+    <a class="product" href="#" data-cat="outdoor">
+      <figure>
+        <img src="assets/product-realized/sun-lounger-white.jpg" alt="Teak sun lounger with white cushion"/>
+        <figcaption><span class="name">Teak Sun Lounger</span><span class="meta">Client &amp; location TBD</span></figcaption>
+      </figure>
+    </a>
+    <a class="product" href="#" data-cat="chairs">
+      <figure>
+        <img src="assets/product-realized/leather-seat-dining-chair.jpg" alt="Curved-back dining chair with black leather seat"/>
+        <figcaption><span class="name">Leather-Seat Dining Chair</span><span class="meta">Client &amp; location TBD</span></figcaption>
+      </figure>
+    </a>
+    <a class="product" href="#" data-cat="occasional">
+      <figure>
+        <img src="assets/product-realized/teak-pedestal-table.jpg" alt="Round teak side table on a conical pedestal base"/>
+        <figcaption><span class="name">Teak Pedestal Table</span><span class="meta">Client &amp; location TBD</span></figcaption>
+      </figure>
+    </a>
+    <a class="product" href="#" data-cat="lounge">
+      <figure>
+        <img src="assets/product-realized/wicker-club-chair.jpg" alt="Woven wicker club chair with upholstered cushions"/>
+        <figcaption><span class="name">Wicker Club Chair</span><span class="meta">Client &amp; location TBD</span></figcaption>
+      </figure>
+    </a>
+    <a class="product" href="#" data-cat="stools">
+      <figure>
+        <img src="assets/product-realized/live-edge-stool.jpg" alt="Live-edge wood stool with splayed legs"/>
+        <figcaption><span class="name">Live-Edge Stool</span><span class="meta">Client &amp; location TBD</span></figcaption>
+      </figure>
+    </a>
+    <a class="product" href="#" data-cat="chairs">
+      <figure>
+        <img src="assets/product-realized/teak-high-chair.jpg" alt="Teak child's high chair with slatted back"/>
+        <figcaption><span class="name">Teak High Chair</span><span class="meta">Client &amp; location TBD</span></figcaption>
+      </figure>
+    </a>
+    <a class="product" href="#" data-cat="outdoor">
+      <figure>
+        <img src="assets/product-realized/sun-lounger-grey.jpg" alt="Sun lounger with grey upholstered cushions on a teak base"/>
+        <figcaption><span class="name">Upholstered Sun Lounger</span><span class="meta">Client &amp; location TBD</span></figcaption>
+      </figure>
+    </a>
+    <a class="product" href="#" data-cat="lounge">
+      <figure>
+        <img src="assets/product-realized/woven-lounge-chair-ivory.jpg" alt="Ivory woven lounge chair on a light ash frame"/>
+        <figcaption><span class="name">Woven Lounge Chair, Ivory</span><span class="meta">Client &amp; location TBD</span></figcaption>
+      </figure>
+    </a>
+  </div>
+</div>
+
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <a class="line" href="mailto:Peter@higneyintl.com">Peter@higneyintl.com</a>
+  <a class="line" href="tel:9544448754">(954) 444-8754</a>
+  <div class="divider"></div>
+  <p>1720 Harrison St, Suite 16A</p>
+  <p>Hollywood, FL 33020</p>
+</section>
+
+<footer>
+  &copy; 2026 Higney International. All rights reserved.
+</footer>
+
+<script>
+  const bar=document.getElementById('topbar'),menuBtn=document.querySelector('.menu-btn');
+  function toggleMenu(){const open=document.body.classList.toggle('menuOpen');menuBtn.setAttribute('aria-expanded',open)}
+  document.querySelectorAll('.menu-layer a').forEach(a=>a.addEventListener('click',()=>{
+    if(document.body.classList.contains('menuOpen'))toggleMenu();
+  }));
+  let lastY=0;
+  addEventListener('scroll',()=>{const y=window.scrollY;bar.classList.toggle('hide',y>lastY&&y>120);lastY=y},{passive:true});
+
+  const chips=document.querySelectorAll('.filters button');
+  chips.forEach(b=>b.addEventListener('click',()=>{
+    chips.forEach(c=>c.classList.remove('active'));
+    b.classList.add('active');
+    const f=b.dataset.filter;
+    document.querySelectorAll('.product').forEach(t=>{
+      t.style.display=(f==='all'||t.dataset.cat===f)?'':'none';
+    });
+  }));
+</script>
+</body>
+</html>
