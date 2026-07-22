@@ -29,17 +29,20 @@
   a{color:inherit;text-decoration:none}
 
   /* Header */
-  header{position:sticky;top:0;z-index:50;background:rgba(78,104,84,.97);backdrop-filter:blur(6px)}
+  header{position:fixed;top:0;left:0;right:0;z-index:50;background:transparent;transition:background .35s ease}
+  header.scrolled{background:rgba(78,104,84,.97);backdrop-filter:blur(6px)}
   .nav{width:100%;margin:0;padding:16px 28px;display:flex;align-items:center;justify-content:space-between}
   .nav img{height:42px;width:auto}
   .nav nav{display:flex;gap:30px}
-  .nav nav a{color:#dfeae3;font-size:14px;font-weight:400;letter-spacing:.04em;text-transform:uppercase;transition:color .2s}
-  .nav nav a:hover,.nav nav a.active{color:#fff}
+  .nav nav a{color:rgba(255,255,255,.92);font-size:14px;font-weight:300;letter-spacing:.06em;
+    border-bottom:1px solid transparent;padding-bottom:2px;transition:color .2s,border-color .2s}
+  .nav nav a:hover,.nav nav a.active{color:#fff;border-bottom-color:rgba(255,255,255,.55)}
   .menu-btn{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer}
 
   /* Hero */
   .hero{position:relative;color:#fff;text-align:center;padding:140px 28px 130px;
-    background:linear-gradient(150deg,rgba(122,154,130,.78) 0%,rgba(90,117,97,.82) 100%),
+    background:linear-gradient(180deg,rgba(21,28,23,.28) 0%,rgba(21,28,23,0) 30%),
+      linear-gradient(150deg,rgba(122,154,130,.78) 0%,rgba(90,117,97,.82) 100%),
       url("assets/6b0a0d959f_DSC08338.jpg") center/cover no-repeat;}
   .hero .eyebrow{font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:#eef3ee;margin-bottom:18px;text-shadow:0 1px 6px rgba(0,0,0,.25)}
   .hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(48px,8vw,86px);line-height:1.02;letter-spacing:.01em;text-shadow:0 2px 14px rgba(0,0,0,.3)}
@@ -241,5 +244,10 @@
   &copy; 2026 Higney International. All rights reserved.
 </footer>
 
+<script>
+  const hdr=document.querySelector('header');
+  const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>40);
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+</script>
 </body>
 </html>

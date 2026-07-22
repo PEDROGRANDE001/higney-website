@@ -32,19 +32,21 @@
   .eyebrow{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:500}
 
   /* Header */
-  header{position:sticky;top:0;z-index:50;background:rgba(78,104,84,.97);backdrop-filter:blur(6px)}
+  header{position:fixed;top:0;left:0;right:0;z-index:50;background:transparent;transition:background .35s ease}
+  header.scrolled{background:rgba(78,104,84,.97);backdrop-filter:blur(6px)}
   .nav{width:100%;margin:0;padding:16px 28px;display:flex;align-items:center;justify-content:space-between}
   .nav img{height:42px;width:auto}
   .nav nav{display:flex;gap:30px}
-  .nav nav a{color:#dfeae3;font-size:14px;font-weight:400;letter-spacing:.04em;text-transform:uppercase;transition:color .2s}
-  .nav nav a:hover,.nav nav a.active{color:#fff}
+  .nav nav a{color:rgba(255,255,255,.92);font-size:14px;font-weight:300;letter-spacing:.06em;
+    border-bottom:1px solid transparent;padding-bottom:2px;transition:color .2s,border-color .2s}
+  .nav nav a:hover,.nav nav a.active{color:#fff;border-bottom-color:rgba(255,255,255,.55)}
   .menu-btn{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer}
 
   /* Hero */
   .hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;color:#fff;
     background:url("assets/43e0f48a1c_FINAL1-upscale-4x.jpg") center 30%/cover no-repeat;}
   .hero::after{content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(21,28,23,.18) 0%,rgba(21,28,23,.06) 40%,rgba(21,28,23,.72) 100%)}
+    background:linear-gradient(180deg,rgba(21,28,23,.42) 0%,rgba(21,28,23,.05) 32%,rgba(21,28,23,.72) 100%)}
   .hero-inner{position:relative;z-index:1;width:100%;max-width:1280px;margin:0 auto;padding:0 40px 88px;
     animation:rise 1s ease .1s both}
   @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
@@ -243,5 +245,10 @@
   &copy; 2026 Higney International. All rights reserved.
 </footer>
 
+<script>
+  const hdr=document.querySelector('header');
+  const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>40);
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+</script>
 </body>
 </html>
