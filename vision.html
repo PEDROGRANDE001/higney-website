@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Higney International — Hospitality Design &amp; FF&amp;E Fulfillment</title>
-<meta name="description" content="Higney International is a premier hybrid design and furniture fulfillment company in South Florida — hospitality environments from first concept through manufacturing, shipping and delivery."/>
+<title>Vision — Higney International</title>
+<meta name="description" content="Higney International's vision — an operator-led cycle of Envision, Design, Engineer, Craft, Deliver, Perfect and Repeat, in the pursuit of perfection."/>
 <link rel="icon" href="assets/a1e69024bd_Logo_White_.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -80,8 +80,8 @@
   }
 
   /* Hero */
-  .hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;color:#fff;
-    background:url("assets/43e0f48a1c_FINAL1-upscale-4x.jpg") center 30%/cover no-repeat;}
+  .hero{position:relative;min-height:80vh;display:flex;align-items:flex-end;color:#fff;
+    background:url("assets/332d640fd5_Kimpton.tulum.002.jpg") center 60%/cover no-repeat;}
   .hero::after{content:"";position:absolute;inset:0;
     background:linear-gradient(180deg,rgba(21,28,23,.42) 0%,rgba(21,28,23,.05) 32%,rgba(21,28,23,.72) 100%)}
   .hero-inner{position:relative;z-index:1;width:100%;max-width:1280px;margin:0 auto;padding:0 40px 88px;
@@ -93,51 +93,37 @@
   .hero p{margin-top:20px;max-width:540px;font-weight:300;font-size:17px;color:#f2f6f1;text-shadow:0 1px 8px rgba(0,0,0,.4)}
   .hero .rule{width:56px;height:1px;background:rgba(255,255,255,.7);margin-top:32px}
 
-  /* Statement */
-  .statement{padding:128px 40px;text-align:center}
-  .statement .eyebrow{margin-bottom:24px}
-  .statement h2{font-family:var(--serif);font-weight:500;font-size:clamp(28px,3.4vw,44px);line-height:1.25;
-    max-width:21em;margin:0 auto}
-  .statement h2 em{font-style:italic;color:var(--accent)}
+  /* Philosophy quote */
+  .creed{padding:136px 40px 120px;text-align:center}
+  .creed .eyebrow{margin-bottom:32px}
+  .creed blockquote{font-family:var(--serif);font-weight:500;font-style:italic;
+    font-size:clamp(30px,3.6vw,48px);line-height:1.25;max-width:19em;margin:0 auto}
+  .creed blockquote em{font-style:italic;color:var(--accent)}
+  .creed figcaption{margin-top:36px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+  .creed figcaption strong{display:block;color:var(--accent);font-weight:500;margin-bottom:6px}
 
-  /* Feature bands */
-  .feature{max-width:1280px;margin:0 auto;padding:0 40px 128px;
-    display:grid;grid-template-columns:7fr 5fr;gap:72px;align-items:center}
-  .feature.reverse .feature-media{order:2}
-  .feature-media img{width:100%;height:min(72vh,620px);object-fit:cover}
-  .feature-body{max-width:400px}
-  .feature.reverse .feature-body{justify-self:end}
-  .feature-body .eyebrow{margin-bottom:20px}
-  .feature-body h2{font-family:var(--serif);font-weight:500;font-size:clamp(32px,3.6vw,48px);line-height:1.1;margin-bottom:20px}
-  .feature-body p{color:var(--muted);font-weight:300;font-size:16px;margin-bottom:32px}
-  .textlink{display:inline-block;font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;
-    color:var(--ink);border-bottom:1px solid var(--accent);padding-bottom:6px;transition:color .2s,border-color .2s}
-  .textlink:hover{color:var(--accent)}
+  /* Intro */
+  .intro{background:var(--green-soft);padding:104px 40px}
+  .intro-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px 88px}
+  .intro h2{font-family:var(--serif);font-weight:500;font-size:clamp(30px,3.2vw,42px);line-height:1.15}
+  .intro .eyebrow{margin-bottom:20px}
+  .intro p{color:var(--muted);font-weight:300;font-size:16px;max-width:56ch}
+  .intro p+p{margin-top:20px}
 
-  /* Quote */
-  .quote{background:var(--green-soft);padding:120px 40px}
-  .quote-inner{max-width:880px;margin:0 auto;text-align:center}
-  .quote-inner img{width:104px;height:104px;object-fit:cover;object-position:top;border-radius:50%;
-    margin:0 auto 36px;filter:grayscale(1)}
-  .quote-inner blockquote{font-family:var(--serif);font-weight:500;font-style:italic;
-    font-size:clamp(26px,3vw,38px);line-height:1.3}
-  .quote-inner figcaption{margin-top:32px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
-  .quote-inner figcaption strong{display:block;color:var(--accent);font-weight:500;margin-bottom:6px}
-
-  /* Category grid */
-  .explore{max-width:1280px;margin:0 auto;padding:128px 40px}
-  .explore-head{text-align:center;margin-bottom:56px}
-  .explore-head .eyebrow{margin-bottom:16px}
-  .explore-head h2{font-family:var(--serif);font-weight:500;font-size:clamp(30px,3.4vw,44px)}
-  .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-  .tile{position:relative;display:block;overflow:hidden}
-  .tile img{width:100%;height:420px;object-fit:cover;transition:transform .6s ease;filter:saturate(.92)}
-  .tile:hover img{transform:scale(1.04)}
-  .tile::after{content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(21,28,23,0) 45%,rgba(21,28,23,.55) 100%)}
-  .tile-label{position:absolute;left:0;right:0;bottom:28px;z-index:1;text-align:center;color:#fff}
-  .tile-label span{display:block;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#d9e4da;margin-bottom:8px}
-  .tile-label strong{font-family:var(--serif);font-weight:500;font-size:26px;letter-spacing:.02em}
+  /* The cycle */
+  .cycle{max-width:1120px;margin:0 auto;padding:136px 40px 120px}
+  .cycle-head{max-width:660px;margin-bottom:72px}
+  .cycle-head .eyebrow{margin-bottom:16px}
+  .cycle-head h2{font-family:var(--serif);font-weight:500;font-size:clamp(32px,3.6vw,48px);line-height:1.1;margin-bottom:20px}
+  .cycle-head p{color:var(--muted);font-weight:300;font-size:16px}
+  .steps{list-style:none}
+  .step{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:16px 72px;align-items:baseline;
+    padding:44px 0;border-top:1px solid var(--line)}
+  .step:last-child{border-bottom:1px solid var(--line)}
+  .step-name{display:flex;align-items:baseline;gap:24px}
+  .step-name .num{font-size:12px;letter-spacing:.2em;color:var(--accent);font-weight:500;min-width:2.4em}
+  .step-name h3{font-family:var(--serif);font-weight:500;font-size:clamp(30px,3.2vw,42px);line-height:1;letter-spacing:.01em}
+  .step p{color:var(--muted);font-weight:300;font-size:16px;max-width:52ch}
 
   /* CTA */
   .cta{background:linear-gradient(150deg,var(--green) 0%,var(--green-deep) 100%);color:#fff;text-align:center;padding:120px 40px}
@@ -153,26 +139,17 @@
 
   footer{background:var(--green-deep);color:#9fc4b1;text-align:center;font-size:13px;padding:26px;letter-spacing:.03em}
 
-  @media(max-width:980px){
-    .feature{grid-template-columns:1fr;gap:40px;padding-bottom:96px}
-    .feature.reverse .feature-media{order:0}
-    .feature-body{max-width:none}
-    .feature.reverse .feature-body{justify-self:start}
-    .feature-media img{height:56vw;max-height:520px}
-    .tiles{grid-template-columns:1fr 1fr}
-  }
   @media(max-width:820px){
-    .hero{min-height:76vh}
+    .hero{min-height:70vh}
     .hero-inner{padding:0 28px 64px}
-    .statement{padding:96px 28px}
-    .feature{padding:0 28px 80px}
-    .explore{padding:96px 28px}
-    .quote{padding:88px 28px}
+    .creed{padding:104px 28px 88px}
+    .intro{padding:88px 28px}
+    .intro-inner{grid-template-columns:1fr}
+    .cycle{padding:104px 28px 88px}
+    .cycle-head{margin-bottom:48px}
+    .step{grid-template-columns:1fr;padding:32px 0}
+    .step p{max-width:none}
     .cta{padding:96px 28px}
-  }
-  @media(max-width:560px){
-    .tiles{grid-template-columns:1fr}
-    .tile img{height:300px}
   }
 </style>
 </head>
@@ -255,79 +232,76 @@
 
 <section class="hero">
   <div class="hero-inner">
-    <div class="eyebrow">Design &amp; FF&amp;E Fulfillment &mdash; South Florida</div>
-    <h1>The pursuit<br/>of perfection</h1>
-    <p>Hospitality environments brought to life end to end &mdash; from first concept to manufacturing, shipping and delivery.</p>
+    <div class="eyebrow">Company &mdash; Vision</div>
+    <h1>Begin with<br/>the feeling</h1>
+    <p>Great venues start with the guest &mdash; the response a space should evoke &mdash; and work back to every piece that delivers it.</p>
     <div class="rule"></div>
   </div>
 </section>
 
-<section class="statement">
-  <div class="eyebrow">Higney International</div>
-  <h2>A premier hybrid design and furniture fulfillment company, bridging the gap between architects and clients to create spaces that are <em>aesthetically stunning</em> and functionally efficient.</h2>
-</section>
-
-<section class="feature">
-  <div class="feature-media">
-    <img src="assets/a53471e1b2_Kimpton.Tulum.001.jpg" alt="Guest room at Tankah Bay Hotel, Riviera Maya — natural wood, woven textures and ocean view" loading="lazy"/>
-  </div>
-  <div class="feature-body">
-    <div class="eyebrow">Design</div>
-    <h2>From vision to venue</h2>
-    <p>From the inception of a project, we work closely with architects, clients and operators to understand their vision, preferences and budget &mdash; crafting bespoke furniture and conceptualizing entire interior spaces.</p>
-    <a class="textlink" href="projects.html">View projects</a>
-  </div>
-</section>
-
-<section class="feature reverse">
-  <div class="feature-media">
-    <img src="assets/829a881066_Saint-Tropez-5-min-1024x683.jpg" alt="Nikki Beach Saint-Tropez — poolside dining beneath the palms" loading="lazy"/>
-  </div>
-  <div class="feature-body">
-    <div class="eyebrow">Fulfillment</div>
-    <h2>Delivered worldwide</h2>
-    <p>We ship containers of product worldwide, managing large-scale logistics with precision &mdash; custom manufacturing through top-tier facilities, renewal and refurbishment, and CAPEX planning for prominent international brands.</p>
-    <a class="textlink" href="fulfillment.html">Explore fulfillment</a>
-  </div>
-</section>
-
-<section class="quote">
-  <figure class="quote-inner">
-    <img src="assets/99f4773c51_DSCF4080a.png" alt="Peter Higney, CEO of Higney International" loading="lazy"/>
-    <blockquote>&ldquo;Creating a venue that evokes an emotional response through its aesthetic is what drives us in pursuit of perfection.&rdquo;</blockquote>
-    <figcaption><strong>Peter Higney</strong>CEO &mdash; 25 years with Nikki Beach Hotels &amp; Resorts</figcaption>
+<section class="creed">
+  <figure>
+    <div class="eyebrow">Our philosophy</div>
+    <blockquote>&ldquo;Creating a venue that evokes an emotional response through its aesthetic is what drives us in <em>the pursuit of perfection</em>.&rdquo;</blockquote>
+    <figcaption><strong>Peter Higney</strong>CEO, Higney International</figcaption>
   </figure>
 </section>
 
-<section class="explore">
-  <div class="explore-head">
-    <div class="eyebrow">Explore</div>
-    <h2>Concept through delivery</h2>
-  </div>
-  <div class="tiles">
-    <a class="tile" href="projects.html">
-      <img src="assets/6b0a0d959f_DSC08338.jpg" alt="The Shorely, Fort Lauderdale" loading="lazy"/>
-      <div class="tile-label"><span>Selected work</span><strong>Projects</strong></div>
-    </a>
-    <a class="tile" href="fulfillment.html">
-      <img src="assets/ffeb1b0edc_Nikki_Beach_Monte_Carlo_Monaco-6903-1024.jpg" alt="Nikki Beach Monte Carlo, atop the Fairmont Hotel" loading="lazy"/>
-      <div class="tile-label"><span>Global logistics</span><strong>Fulfillment</strong></div>
-    </a>
-    <a class="tile" href="about.html">
-      <img src="assets/2fb5651b70__40KImpton.SouthBeach.001.jpg" alt="La Habana at the Kimpton Anglers Hotel, South Beach" loading="lazy"/>
-      <div class="tile-label"><span>Our story</span><strong>About</strong></div>
-    </a>
-    <a class="tile" href="team.html">
-      <img src="assets/a6785f06b3__40KimptonSouthbeach.rooftop.jpg" alt="Rooftop pool deck, Kimpton South Beach" loading="lazy"/>
-      <div class="tile-label"><span>The people</span><strong>Team</strong></div>
-    </a>
+<section class="intro">
+  <div class="intro-inner">
+    <div>
+      <div class="eyebrow">Who we are</div>
+      <h2>Design led by an operator</h2>
+    </div>
+    <div>
+      <p>Higney International is a premier hybrid design and furniture fulfillment company in South Florida, led by CEO Peter Higney &mdash; a twenty-five-year veteran and former VP of Hotel Development for Nikki Beach Hotels &amp; Resorts. We bridge the gap between architects, clients and operators to create hospitality spaces that are aesthetically stunning and functionally efficient.</p>
+      <p>Because we come from operations, we carry a project the whole way &mdash; from first concept through design, manufacturing, shipping and delivery.</p>
+    </div>
   </div>
 </section>
 
+<section class="cycle">
+  <div class="cycle-head">
+    <div class="eyebrow">How we work</div>
+    <h2>The Higney cycle</h2>
+    <p>Seven steps, one loop. The middle of the cycle &mdash; making and delivering the work &mdash; is the part most design firms hand off. We own it.</p>
+  </div>
+  <ol class="steps">
+    <li class="step">
+      <div class="step-name"><span class="num">01</span><h3>Envision</h3></div>
+      <p>Every project begins with the guest. Drawing on 25 years operating hospitality venues, we start from the feeling a space should create &mdash; then work back to the pieces that deliver it.</p>
+    </li>
+    <li class="step">
+      <div class="step-name"><span class="num">02</span><h3>Design</h3></div>
+      <p>We translate that vision into bespoke furniture and interiors, sitting between architect, client and operator so the design serves all three.</p>
+    </li>
+    <li class="step">
+      <div class="step-name"><span class="num">03</span><h3>Engineer</h3></div>
+      <p>Beauty has to work. We value-engineer every piece to budget, durability and the realities of a working venue &mdash; without losing the intent.</p>
+    </li>
+    <li class="step">
+      <div class="step-name"><span class="num">04</span><h3>Craft</h3></div>
+      <p>We manufacture through vetted production partners, controlling materials and quality from prototype to finished piece.</p>
+    </li>
+    <li class="step">
+      <div class="step-name"><span class="num">05</span><h3>Deliver</h3></div>
+      <p>We ship and install worldwide &mdash; the fulfillment most design firms hand off, we own end to end.</p>
+    </li>
+    <li class="step">
+      <div class="step-name"><span class="num">06</span><h3>Perfect</h3></div>
+      <p>On site, we verify the result against the original vision, refining until it evokes the response we set out to create.</p>
+    </li>
+    <li class="step">
+      <div class="step-name"><span class="num">07</span><h3>Repeat</h3></div>
+      <p>Then we do it again, sharper each time. The pursuit of perfection has no finish line.</p>
+    </li>
+  </ol>
+</section>
+
 <section class="cta" id="contact">
-  <div class="eyebrow">Start a project</div>
-  <h2>Let&rsquo;s work together</h2>
-  <p>Let Higney International bring your visions to life with luxury design, timeless furniture, and captivating spaces.</p>
+  <div class="eyebrow">The pursuit of perfection</div>
+  <h2>Start the cycle with us</h2>
+  <p>Bring us the feeling your venue should create &mdash; we&rsquo;ll carry it from vision to delivered space.</p>
   <a class="btn" href="contact.html">Contact us</a>
   <div class="divider"></div>
   <a class="line" href="mailto:Peter@higneyintl.com">Peter@higneyintl.com</a>
